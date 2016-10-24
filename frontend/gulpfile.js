@@ -28,10 +28,10 @@ gulp.task('sass', function () {
 });
 
 // Watch
-// gulp.task('watch', function() {
-//   gulp.watch('./js/*.js', ['scripts']);
-//    gulp.watch('./scss/**/*.scss', ['sass']);
-// });
+gulp.task('watch', function() {
+  gulp.watch('./js/*.js', ['scripts']);
+   gulp.watch('./scss/**/*.scss', ['sass']);
+});
 
 // Default
-gulp.task('default', ['scripts', 'sass']);
+gulp.task('default', ['scripts', 'sass', 'watch']);
