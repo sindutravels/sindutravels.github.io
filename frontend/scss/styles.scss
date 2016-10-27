@@ -7,10 +7,39 @@ $carousel-controller-height: 245px;
     border: 1px solid black;
 }
 
+#navigation {
+    &.float {
+        float: left;
+    }
+    nav {
+        .nav-wrapper {
+            .brand-logo {
+            }
+            ul {
+                .nav-link {
+                }
+            }
+        }
+    }
+}
+
+// nav.navigation {
+//     color: #000;
+//     background-color: #FFFFFF;
+//     opacity: 0.5;
+//     filter: alpha(opacity=50);
+//     .nav-wrapper {
+//         color: #000000;
+//     }
+// }
+
 #carousel-container {
     // position: relative;
 
 }
+
+
+
 .carousel {
     height: $carousel-height;
     .carousel-item {

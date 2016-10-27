@@ -30,9 +30,67 @@ var carousel = {
 
 };
 
+var navbar = {
+    display: true,
+    init: function() {
+        var options = [
+            {
+                selector: '.carousel',
+                offset: 1000,
+                callback: function(el) {
+                    Materialize.toast("This is our ScrollFire Demo!", 1500 );
+                }
+            },
+            {
+                selector: '.carousel',
+                offset: 1500,
+                callback: function(el) {
+                    Materialize.toast("Please continue scrolling!", 1500 );
+                }
+            },
+        ];
+        Materialize.scrollFire(options);
+        var disso = navbar.dissolve();
+        $(window).on('scroll', function() {
+            if (disso) {
+                clearTimeout(disso);
+                disso = undefined;
+            }
+            var offset = $(this).scrollTop() - $('.carousel').height();
+            if (offset > 0) {
+                $('#navigation').removeClass('float');
+            } else {
+                $('#navigation').addClass('float');
+            }
+            navbar.show();
+            clearTimeout($.data(this, 'scrollTimer'));
+            $.data(this, 'scrollTimer', setTimeout(function() {
+                offset > 0 ? navbar.show() : navbar.hide();
+            }, 2050));
+        });
+    },
+    dissolve: function() {
+        navbar.show();
+        return setTimeout(navbar.hide, 2000);
+    },
+    hide: function() {
+        if (navbar.display) {
+            $("#navigation").fadeOut('slow');
+            navbar.display = false;
+        }
+    },
+    show: function() {
+        if (!navbar.display) {
+            $("#navigation").fadeIn('fast');
+            navbar.display = true;
+        }
+    }
+};
+
 
 
 $(document).ready(function() {
     $('.button-collapse').sideNav();
     carousel.init();
+    navbar.init();
 });
