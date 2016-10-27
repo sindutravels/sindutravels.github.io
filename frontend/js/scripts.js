@@ -56,7 +56,7 @@ var navbar = {
                 clearTimeout(disso);
                 disso = undefined;
             }
-            var offset = $(this).scrollTop() - $('.carousel').height();
+            var offset = $(this).scrollTop() - $('.carousel').height() - 70;
             if (offset > 0) {
                 $('#navigation').removeClass('float');
             } else {
