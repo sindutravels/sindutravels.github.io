@@ -19,7 +19,7 @@ function init_map() {
     marker.setMap(map);
 
     var infowindow = new google.maps.InfoWindow({
-       content: "Sindu Travels <br/> 04772282666 <br/> 9746599702"
+       content: "Sindu Travels <br/> 04772282666 <br/> +91-9447896784"
     });
 
 
