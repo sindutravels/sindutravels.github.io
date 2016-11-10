@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Material Design Bootstrap</title>
+    <title>Sindu Travels</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -40,18 +40,18 @@
                 <!--Navbar Brand-->
                 <a class="navbar-brand" href="#" target="_blank">ST</a>
                 <!--Links-->
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav right">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link home" data-target="id-home" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link about" data-target="id-about" href="#id-about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#best-features">Features</a>
+                        <a class="nav-link features" data-target="id-best-features" href="#id-best-features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link contact" data-target="id-contact" href="#id-contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -77,7 +77,7 @@
     <!-- Main container-->
     <div class="container">
 
-        <div class="divider-new">
+        <div class="divider-new" id="id-about">
             <h2 class="h2-responsive wow bounceIn">About us</h2>
         </div>
 
@@ -90,7 +90,7 @@
         </section>
         <!--Section: About-->
 
-        <div class="divider-new">
+        <div class="divider-new" id="id-best-features">
             <h2 class="h2-responsive wow fadeInDown">Best features</h2>
         </div>
 
@@ -219,7 +219,7 @@
         </section>
         <!--/Section: Best features-->
 
-        <div class="divider-new">
+        <div class="divider-new" id="id-contact">
             <h2 class="h2-responsive wow fadeInUp">Contact us</h2>
         </div>
 
@@ -349,10 +349,8 @@
 
                 <!--First column-->
                 <div class="col-md-3 offset-md-1">
-                    <h5 class="title">ABOUT MATERIAL DESIGN</h5>
-                    <p>Material Design (codenamed Quantum Paper) is a design language developed by Google. </p>
-
-                    <p>Material Design for Bootstrap (MDB) is a powerful Material Design UI KIT for most popular HTML, CSS, and JS framework - Bootstrap.</p>
+                    <h5 class="title">ABOUT US</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit explicabo assumenda eligendi ex exercitationem harum</p>
                 </div>
                 <!--/.First column-->
 
@@ -360,13 +358,6 @@
 
                 <!--Second column-->
                 <div class="col-md-2 offset-md-1">
-                    <h5 class="title">First column</h5>
-                    <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
-                    </ul>
                 </div>
                 <!--/.Second column-->
 
@@ -374,13 +365,6 @@
 
                 <!--Third column-->
                 <div class="col-md-2">
-                    <h5 class="title">Second column</h5>
-                    <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
-                    </ul>
                 </div>
                 <!--/.Third column-->
 
@@ -388,12 +372,12 @@
 
                 <!--Fourth column-->
                 <div class="col-md-2">
-                    <h5 class="title">Third column</h5>
+                    <h5 class="title">Navigation</h5>
                     <ul>
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
+                        <li><a class="footer-nav-link" data-target="home" href="#">Home</a></li>
+                        <li><a class="footer-nav-link" data-target="about" href="#">About</a></li>
+                        <li><a class="footer-nav-link" data-target="features" href="#">Features</a></li>
+                        <li><a class="footer-nav-link" data-target="contact" href="#">Contact</a></li>
                     </ul>
                 </div>
                 <!--/.Fourth column-->

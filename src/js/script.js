@@ -29,9 +29,32 @@ function init_map() {
 
 }
 
+function navigation() {
+    var offset = $('nav.navbar').height() + 15;
+    $('.nav-link').click(function(ev) {
+        ev.preventDefault();
+        $('.nav-item').removeClass('active');
+        $(this).parent().addClass('active');
+        var elem = "#" + $(this).data('target');
+        scroll_to($(elem).offset() ? $(elem).offset().top - offset : 0);
+    });
+    $('.footer-nav-link').click(function(ev) {
+        ev.preventDefault();
+        var target = ".nav-link." + $(this).data('target');
+        $(target).click();
+    });
+}
+
+function scroll_to(pos) {
+    $('html, body').animate({
+        scrollTop: pos
+    }, 1000);
+}
+
 $(document).ready(function() {
     // initialise animations
     new WOW().init();
     google.maps.event.addDomListener(window, 'load', init_map);
+    navigation();
 });
 
