@@ -52,10 +52,11 @@ footer.page-footer {
 
 
 #contact_form button.btn-primary {
-    background: #373a3c;
+    background: #373a3c !important;
 }
 
-#contact_form button.btn-primary:hover {
+#contact_form button.btn-primary:hover,
+#contact_form button.btn-primary:visited, {
     background: #373a3c !important;
 }
 

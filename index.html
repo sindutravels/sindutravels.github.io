@@ -228,15 +228,15 @@
         </div>
 
         <!-- Section: Contact Form-->
-        <section id="contact_form">
-            <form>
+        <section>
+            <form id="contact_form" method="post" action=".">
                 <!--First row-->
                 <div class="row">
                     <!--First column-->
                     <div class="col-md-6">
                         <div class="md-form">
                             <i class="fa fa-user prefix"></i>
-                            <input type="text" id="fname" class="form-control">
+                            <input name="firstname" type="text" id="fname" class="form-control required">
                             <label for="fname">First Name</label>
                         </div>
                     </div>
@@ -244,7 +244,7 @@
                     <div class="col-md-6">
                         <div class="md-form">
                             <i class="fa fa-user prefix"></i>
-                            <input type="text" id="lname" class="form-control">
+                            <input name="lastname" type="text" id="lname" class="form-control">
                             <label for="lname">Last Name</label>
                         </div>
                     </div>
@@ -258,7 +258,7 @@
                     <div class="col-md-6">
                         <div class="md-form">
                             <i class="fa fa-envelope prefix"></i>
-                            <input type="email" id="email" class="form-control validate">
+                            <input name="email" type="email" id="email" class="form-control validate required">
                             <label for="email" data-error="Invalid Email" data-success="">Email Address</label>
                         </div>
                     </div>
@@ -267,7 +267,7 @@
                     <div class="col-md-6">
                         <div class="md-form">
                             <i class="fa fa-mobile-phone prefix"></i>
-                            <input type="password" id="phone" class="form-control validate">
+                            <input name="phone" type="text" id="phone" class="form-control validate">
                             <label for="phone" data-error="" data-success="">Contact No.</label>
                         </div>
                     </div>
@@ -281,7 +281,7 @@
 
                         <div class="md-form">
                             <i class="fa fa-pencil prefix"></i>
-                            <textarea type="text" id="query" placeholder="Please enter trip details (eg. From Alappuzha to Kochi on date)" class="md-textarea"></textarea>
+                            <textarea name="tripdetails" type="text" id="query" placeholder="Please enter trip details (eg. From Alappuzha to Kochi on date)" class="md-textarea"></textarea>
                             <label for="query"></label>
                         </div>
                     </div>
@@ -295,12 +295,15 @@
 
                         <div class="md-form">
                             <i class="fa fa-pencil prefix"></i>
-                            <textarea type="text" id="query" placeholder="Any other details you would like to know from us." class="md-textarea"></textarea>
+                            <textarea name="comments" type="text" id="query" placeholder="Any other details you would like to know from us." class="md-textarea"></textarea>
                             <label for="query"></label>
                         </div>
                     </div>
                 </div>
                 <!--/.Second row-->
+
+                <input type="hidden" name="_subject" value="New submission @ SinduTravels!" />
+                <input type="text" name="_gotcha" style="display:none" />
 
                 <!--Third row-->
                 <div class="row">
@@ -308,7 +311,7 @@
                     </div>
                     <!--First column-->
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-primary btn-lg">Submit</button>
+                        <button id="btn-submit-contact" type="button" class="btn btn-primary btn-lg">Submit</button>
                     </div>
                 </div>
                 <!--/.Third row-->
@@ -355,6 +358,36 @@
         <!--Section: Contact-->
     </div>
     <!--/ Main container-->
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Thanks!</h4>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <div class="success">
+                    Thanks for contacting us! Our representative will get back to you shortly.
+                </div>
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- /.Live preview-->
 
 
 

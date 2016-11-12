@@ -51,9 +51,49 @@ function scroll_to(pos) {
     }, 1000);
 }
 
+function validate(data) {
+    var error = false;
+    if (!data.firstname) error = true;
+    if (!data.email && !data.phone) error=true;
+    if (!data.comments && !data.tripdetails) error=true;
+    return !error;
+}
+
+function formHandler(button) {
+    var dataArray = $("#contact_form").serializeArray();
+    var data = {};
+
+    $(dataArray).each(function(idx, item) {
+        data[item.name] = item.value;
+    });
+    if (!validate(data)) {
+        alert("Please provide contact details.");
+        button.removeClass("disabled");
+    } else {
+        $.ajax({
+            url: "https://formspree.io/ashiksujath2@gmail.com",
+            method: "POST",
+            data: data,
+            dataType: "json",
+            success: function(data) {
+                $("#contactModal").modal('show');
+                button.removeClass("disabled");
+                $("#contact_form").find("textarea:visible").val("");
+                $("#contact_form").find("input:visible").val("");
+            }
+        });
+    }
+}
+
 $(document).ready(function() {
     // initialise animations
     new WOW().init();
+    $("#btn-submit-contact").click(function(ev) {
+        ev.preventDefault();
+        if ($(this).hasClass("disabled")) return;
+        $(this).addClass("disabled");
+        formHandler($(this));
+    });
     google.maps.event.addDomListener(window, 'load', init_map);
     navigation();
 });
