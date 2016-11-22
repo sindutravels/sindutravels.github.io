@@ -236,8 +236,8 @@
                     <div class="col-md-6">
                         <div class="md-form">
                             <i class="fa fa-user prefix"></i>
-                            <input name="firstname" type="text" id="fname" class="form-control required">
-                            <label for="fname">First Name</label>
+                            <input name="firstname" type="text" id="fname" class="form-control validate">
+                            <label data-error="Required" class="active" for="fname">First Name</label>
                         </div>
                     </div>
 
@@ -268,7 +268,7 @@
                         <div class="md-form">
                             <i class="fa fa-mobile-phone prefix"></i>
                             <input name="phone" type="text" id="phone" class="form-control validate">
-                            <label for="phone" data-error="" data-success="">Contact No.</label>
+                            <label for="phone" data-error="Email or Phone required" data-success="">Contact No.</label>
                         </div>
                     </div>
                 </div>
@@ -281,8 +281,8 @@
 
                         <div class="md-form">
                             <i class="fa fa-pencil prefix"></i>
-                            <textarea name="tripdetails" type="text" id="query" placeholder="Please enter trip details (eg. From Alappuzha to Kochi on date)" class="md-textarea"></textarea>
-                            <label for="query"></label>
+                            <textarea name="tripdetails" type="text" id="tripdetails" placeholder="Please enter trip details (eg. From Alappuzha to Kochi on date)" class="md-textarea"></textarea>
+                            <label for="tripdetails"></label>
                         </div>
                     </div>
                 </div>
@@ -295,14 +295,14 @@
 
                         <div class="md-form">
                             <i class="fa fa-pencil prefix"></i>
-                            <textarea name="comments" type="text" id="query" placeholder="Any other details you would like to know from us." class="md-textarea"></textarea>
-                            <label for="query"></label>
+                            <textarea name="comments" type="text" id="comments" placeholder="Any other details you would like to know from us." class="md-textarea"></textarea>
+                            <label for="comments"></label>
                         </div>
                     </div>
                 </div>
                 <!--/.Second row-->
 
-                <input type="hidden" name="_subject" value="New submission @ SinduTravels!" />
+                <input type="hidden" name="_subject" value="[SinduTravels] Submission" />
                 <input type="text" name="_gotcha" style="display:none" />
 
                 <!--Third row-->
@@ -361,33 +361,33 @@
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <!--Content-->
-        <div class="modal-content">
-            <!--Header-->
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Thanks!</h4>
-            </div>
-            <!--Body-->
-            <div class="modal-body">
-                <div class="success">
-                    Thanks for contacting us! Our representative will get back to you shortly.
+    <!-- Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Thanks!</h4>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="success">
+                        Thanks for contacting us! Our representative will get back to you shortly.
+                    </div>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
-            <!--Footer-->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+            <!--/.Content-->
         </div>
-        <!--/.Content-->
     </div>
-</div>
-<!-- /.Live preview-->
+    <!-- /.Live preview-->
 
 
 

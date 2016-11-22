@@ -51,25 +51,48 @@ function scroll_to(pos) {
     }, 1000);
 }
 
-function validate(data) {
-    var error = false;
-    if (!data.firstname) error = true;
-    if (!data.email && !data.phone) error=true;
-    if (!data.comments && !data.tripdetails) error=true;
-    return !error;
-}
+
+
+
 
 function formHandler(button) {
-    var dataArray = $("#contact_form").serializeArray();
+    var form = $("#contact_form");
+    var dataArray = form.serializeArray();
     var data = {};
+
+    var resetForm = function () {
+        form.find("textarea:visible").val("");
+        form.find("input:visible").val("");
+    };
+
+    validateForm = function(data) {
+        var error = false;
+        if (!data.firstname) {
+            error = true;
+            $('input#fname').addClass('invalid');
+            $('input#fname').siblings('label').addClass('active');
+        }
+        if (!data.email && !data.phone) {
+            error=true;
+            $('input#phone').addClass('invalid');
+            $('input#phone').siblings('label').addClass('active');
+        }
+        if (!data.comments && !data.tripdetails) {
+            error=true;
+            $('textarea#comments').addClass('invalid');
+            $('input#phone').siblings('label').addClass('active');
+        }
+        return !error;
+    };
 
     $(dataArray).each(function(idx, item) {
         data[item.name] = item.value;
     });
-    if (!validate(data)) {
-        alert("Please provide contact details.");
+    if (!validateForm(data)) {
         button.removeClass("disabled");
     } else {
+        var today = new Date().toDateString();
+        data._subject = data._subject +" by " + data.firstname.substring(0, 10) + " @ " + today;
         $.ajax({
             url: "https://formspree.io/ashiksujath2@gmail.com",
             method: "POST",
@@ -78,8 +101,7 @@ function formHandler(button) {
             success: function(data) {
                 $("#contactModal").modal('show');
                 button.removeClass("disabled");
-                $("#contact_form").find("textarea:visible").val("");
-                $("#contact_form").find("input:visible").val("");
+                resetForm();
             }
         });
     }
