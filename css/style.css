@@ -5,6 +5,10 @@ body,
 }
 /* Navigation*/
 
+#best-features div.view {
+    background-color: #FFF;
+}
+
 .navbar {
     background-color: transparent;
 }
@@ -35,7 +39,7 @@ footer.page-footer {
     color: #fff;
 }
 
-.view {
+.main-view {
     background: url("/img/background10.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;

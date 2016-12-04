@@ -51,7 +51,17 @@ function scroll_to(pos) {
     }, 1000);
 }
 
-
+function adjustCards(cards) {
+    var height = 0;
+    cards.each(function(idx, elem) {
+        height = Math.max(height, $(elem).height());
+    });
+    if (height > 0) {
+        cards.each(function(idx, elem) {
+            $(elem).height(height);
+        });
+    }
+}
 
 
 
@@ -110,6 +120,9 @@ function formHandler(button) {
 $(document).ready(function() {
     // initialise animations
     new WOW().init();
+    // equilise card height
+    adjustCards($("#best-features div.card-block"));
+    adjustCards($("#best-features div.view"));
     $("#btn-submit-contact").click(function(ev) {
         ev.preventDefault();
         if ($(this).hasClass("disabled")) return;
