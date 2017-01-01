@@ -93,3 +93,7 @@ button.btn-secondary:focus {
 #contact_form label {
     width: 100%;
 }
+
+#contact a {
+    color: #373a3c;
+}
